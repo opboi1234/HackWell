@@ -96,6 +96,13 @@
                 button.textContent = '⛶ Fullscreen';
             }
         }
+
+        // Warn user before closing the tab
+        window.addEventListener('beforeunload', function(event) {
+            event.preventDefault();
+            event.returnValue = '';
+            return '';
+        });
     </script>
 </body>
 </html>
